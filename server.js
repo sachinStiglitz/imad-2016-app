@@ -23,7 +23,8 @@ var articles ={
         </p>`,
      text : 'one',
      btn : 'btnone',
-     js :'one.js'
+     js :'one.js',
+     ul :'ul1'
     },
     'article-two' : {
       title :'Article Two| Sachin R Das',
@@ -35,7 +36,8 @@ var articles ={
          </p>`,
       text : 'two',
       btn : 'btntwo',
-      js :'two.js'
+      js :'two.js',
+      ul :'ul2'
     },
     'article-three': {
       title :'Article Three | Sachin R Das',
@@ -46,8 +48,9 @@ var articles ={
               This is my 3rd Article
           </p>`,
       text : 'three',
-      btn : 'btnthree'
-      js :'three.js'
+      btn : 'btnthree',
+      js :'three.js',
+      ul :'ul3'
     }
 }; 
 
@@ -59,6 +62,7 @@ var content=data.content;
 var text=data.text;
 var btn=data.btn;
 var js=data.js;
+var ul=data.ul;
 
 var htmlTemplate =
 `<html>
@@ -87,6 +91,9 @@ var htmlTemplate =
        <hr/>
           <input type="text" id ="${text}" placeholder="name"></input>
           <input type="submit" value = "Submit" id ="${btn}"></input>
+          
+          <ul id ="${ul}">
+          </ul>
     </div>
      <script type="text/javascript" src="/ui/${js}">
         </script>
