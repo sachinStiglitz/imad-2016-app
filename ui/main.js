@@ -21,7 +21,7 @@ button.onclick= function() {
     };
           //create rewuest response page
 
-          request.open('GET http://coco98.imad.hasura-app.io/Launcher 'true');
+          request.open('GET',' http://coco98.imad.hasura-app.io/counter', true);
           request.send(null);
-          ////9G
+              
 };
