@@ -27,8 +27,6 @@ button.onclick= function() {
 
 
 //submit name
-var nameInput = document.getElementById("name");
-var name = nameInput.value;
 var submit = document.getElementById("submit_btn");
 submit.onclick = function() {
   //make a request to the server and sent a name
@@ -54,6 +52,8 @@ submit.onclick = function() {
         //don't do anything
 };
           //create request response page
+        var nameInput = document.getElementById("name");
+        var name = nameInput.value;
         request.open('GET',' http://sachinstiglitz.imad.hasura-app.io/sunmit-name?name='+ name, true);
         request.send(null);  
   
