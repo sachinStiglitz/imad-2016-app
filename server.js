@@ -7,42 +7,40 @@ app.use(morgan('combined'));
 
 
 var articles ={
-
     'article-one' : {
-    title :'Article One | Sachin R Das',
-    heading :'Article 1',
-    date : 'sep 20,2016',
-    content : `<p>
-    This is my first article.This is my first article.This is my first article.This is my first article.This is my first article.This is my first article.This is my first article.
-  </p>
-   <p>
-    This is my first article.This is my first article.This is my first article.This is my first article.This is my first article.This is my first article.This is my first article.
-  </p>
-   <p>
-    This is my first article.This is my first article.This is my first article.This is my first article.This is my first article.This is my first article.This is my first article.
-  </p>`
+     title :'Article One | Sachin R Das',
+     heading :'Article 1',
+     date : 'sep 20,2016',
+     content : 
+        `<p>
+             This is my first article.This is my first article.This is my first article.This is my first article.This is my first article.This is my first article.This is my first article.
+        </p>
+        <p>
+             This is my first article.This is my first article.This is my first article.This is my first article.This is my first article.This is my first article.This is my first article.
+        </p>
+        <p>
+             This is my first article.This is my first article.This is my first article.This is my first article.This is my first article .This is my first article.This is my first article.
+        </p>`
     },
-    
     'article-two' : {
-        title :'Article Two| Sachin R Das',
-    heading :'Article 2',
-    date : 'sep 20,2016',
-    content : `<p>
-    This is my second article
-    }`
+      title :'Article Two| Sachin R Das',
+      heading :'Article 2',
+      date : 'sep 20,2016',
+      content : 
+        `<p>
+              This is my second article
+         </p>`
     },
-
     'article-three': {
-        title :'Article Three | Sachin R Das',
-    heading :'Article 3',
-    date : 'sep 20,2016',
-    content : `<p>
-    This is my 3rd Article
-    </p>`
+      title :'Article Three | Sachin R Das',
+      heading :'Article 3',
+      date : 'sep 20,2016',
+      content : 
+         `<p>
+              This is my 3rd Article
+          </p>`
     }
-};
-
-
+}; 
 
 function createTemplate(data){
 var title=data.title;
@@ -52,39 +50,34 @@ var content=data.content;
 
 var htmlTemplate =
 `<html>
-<head>
-  <title>
-    ${title}
-  </title>
-  <meta name="viewport" content ="width=device-width,initial-scale=1">
-  <link href="/ui/style.css" rel="stylesheet" />
-</head>
+   <head>
+     <title>
+       ${title}
+     </title>
+    <meta name="viewport" content ="width=device-width,initial-scale=1">
+   <link href="/ui/style.css" rel="stylesheet" />
+  </head>
 <body>
-   
-<div class="container">  
- <div>
-        <a href ='/'>
-            Home
-            </a>
+   <div class="container">  
+       <div>
+           <a href ='/'>Home</a>
+       </div>
+       <hr/>
+       <h3>
+           ${heading}
+       </h3><hr/>
+       <div>
+           ${date}
+       </div>
+       < div>
+           ${content}
+       </div>
     </div>
-    <hr/>
-  <div>
-      <h3>${heading}</h3>
-  </div>
-  <hr/>
-  <div>
-    ${date}
-  </div>
-<div>
-     ${content}
-  </div>
-</div>
-</body>
-</html>`;
-return htmlTemplate;
+  </body>
+</html>
+`;
+    return htmlTemplate;
 }
-
-
 
 app.get('/', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'index.html'));
@@ -97,10 +90,11 @@ app.get('/counter', function(req,res){
 });
 
 app.get('/:articleName',function(req,res) {
-    var articleName=req.params.articleName;
+    //articleName = article-one
+    //article[articleName] == {}  content onject for article one
+    var articleName = req.params.articleName;
     res.send(createTemplate(articles[articleName]));
 });
-
 
 app.get('/ui/style.css', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'style.css'));
@@ -112,6 +106,17 @@ app.get('/ui/main.js', function (req, res) {
 
 app.get('/ui/madi.png', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'madi.png'));
+});
+
+var names = [];
+app.get("/submit-name/:name",function(rew,res){
+    //get the name from the request
+    var name = req.params.name;  //TODO
+    
+    names.push(name);
+     //JSON = Javascript Object Notation
+     
+    res.send(JSON.stringify(names));
 });
 
 
