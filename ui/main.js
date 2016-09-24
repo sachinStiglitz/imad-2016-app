@@ -44,17 +44,16 @@ submit.onclick = function() {
            var list ='';
            for (var i=0 ; i<names.length; i++) {
            list=list + '<li>'+ names[i] + '</li>';
-  }
+           }
            var ul = document.getElementById("namelist");
            ul.innerHTML = list; 
         }
     }
         //don't do anything
-};
+    };
           //create request response page
         var nameInput = document.getElementById("name");
         var name = nameInput.value;
         request.open('GET',' http://sachinstiglitz.imad.hasura-app.io/sunmit-name?name='+ name, true);
         request.send(null);  
-  
 };
