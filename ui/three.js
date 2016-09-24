@@ -11,8 +11,8 @@ submit.onclick = function() {
            var names3 = request.responseText;
            names3 = JSON.parse(names3);
            var list3 ='';
-           for (var i=0 ; i<names3.length; i++) {
-           list3=list3 + '<li>'+ names3[i] + '</li>';
+           for (var i3=0 ; i3<names3.length; i3++) {
+           list3=list3 + '<li>'+ names3[i3] + '</li>';
            }
            var ul3 = document.getElementById("ul3");
            ul3.innerHTML = list3; 
