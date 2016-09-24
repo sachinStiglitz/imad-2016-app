@@ -122,6 +122,33 @@ var name = req.query.name;  //TODO                      //             var name 
      res.send(JSON.stringify(names));                    //             var name = req.query.name; 
 });
 
+var names1 = [];
+app.get("/one",function(req,res){                //method 1 : app.get("/submit-name/:name",function(req,res){
+  //get the name from the request                        //              //URL : /submit-name/xxxxxxxx
+var name1 = req.query.name1;  //TODO                      //             var name = req.params.name;
+    names1.push(name);                                    //method 2 : app.get("/submit-name",function(req,res){
+     //JSON = Javascript Object Notation                 //              //URL : /submit-name?name=xxxxxx                
+     res.send(JSON.stringify(names1));                    //             var name = req.query.name; 
+});
+
+var names2 = [];
+app.get("/two",function(req,res){                //method 1 : app.get("/submit-name/:name",function(req,res){
+  //get the name from the request                        //              //URL : /submit-name/xxxxxxxx
+var name2 = req.query.name2;  //TODO                      //             var name = req.params.name;
+    names2.push(name2);                                    //method 2 : app.get("/submit-name",function(req,res){
+     //JSON = Javascript Object Notation                 //              //URL : /submit-name?name=xxxxxx                
+     res.send(JSON.stringify(names2));                    //             var name = req.query.name; 
+});
+
+var names3 = [];
+app.get("/three",function(req,res){                //method 1 : app.get("/submit-name/:name",function(req,res){
+  //get the name from the request                        //              //URL : /submit-name/xxxxxxxx
+var name3 = req.query.name3;  //TODO                      //             var name = req.params.name;
+    names3.push(name3);                                    //method 2 : app.get("/submit-name",function(req,res){
+     //JSON = Javascript Object Notation                 //              //URL : /submit-name?name=xxxxxx                
+     res.send(JSON.stringify(names3));                    //             var name = req.query.name; 
+});
+
 app.get('/:articleName',function(req,res) {
     //articleName = article-one
     //article[articleName] == {}  content onject for article one
