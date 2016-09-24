@@ -22,7 +22,7 @@ var articles ={
              This is my first article.This is my first article.This is my first article.This is my first article.This is my first article .This is my first article.This is my first article.
         </p>`,
      text : 'one',
-     btn : 'one'
+     btn : 'btnone'
     },
     'article-two' : {
       title :'Article Two| Sachin R Das',
@@ -33,7 +33,7 @@ var articles ={
               This is my second article
          </p>`,
       text : 'two',
-      btn : 'two'
+      btn : 'btntwo'
     },
     'article-three': {
       title :'Article Three | Sachin R Das',
@@ -44,7 +44,7 @@ var articles ={
               This is my 3rd Article
           </p>`,
       text : 'three',
-      btn : 'three'
+      btn : 'btnthree'
     }
 }; 
 
