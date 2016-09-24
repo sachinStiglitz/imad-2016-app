@@ -8,21 +8,23 @@ submit.onclick = function() {
         //do something
         if(request.status === 200){
             //capture a list of names and render it as a list.
-           var names = request.responseText;
-           names = JSON.parse(names);
-           var list ='';
-           for (var i=0 ; i<names.length; i++) {
-           list=list + '<li>'+ names[i] + '</li>';
+           var names1 = request.responseText;
+           names1 = JSON.parse(names1);
+           var list1 ='';
+           for (var i=0 ; i<names1.length; i++) {
+           list1=list1 + '<li>'+ names1[i] + '</li>';
            }
-           var ul = document.getElementById("namelist");
-           ul.innerHTML = list; 
+           var ul1 = document.getElementById("ul1");
+           ul1.innerHTML = list1; 
         }
     }
         //don't do anything
     };
           //create request response page
-        var nameInput = document.getElementById("name");
-        var name = nameInput.value;
-        request.open('GET',' http://sachinstiglitz.imad.hasura-app.io/submit-name?name='+ name, true);
+        var nameInput1 = document.getElementById("one");
+        var name1 = nameInput1.value;
+        request.open('GET',' http://sachinstiglitz.imad.hasura-app.io/one?name='+ name, true);
         request.send(null);  
 };
+
+
