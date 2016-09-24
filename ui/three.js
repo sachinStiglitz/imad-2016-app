@@ -1,4 +1,4 @@
-var submit1 = document.getElementById("btnone");
+var submit3 = document.getElementById("btnthree");
 submit.onclick = function() {
   //make a request to the server and sent a name
     var request = new XMLHttpRequest();
@@ -8,21 +8,21 @@ submit.onclick = function() {
         //do something
         if(request.status === 200){
             //capture a list of names and render it as a list.
-           var names = request.responseText;
-           names = JSON.parse(names);
-           var list ='';
-           for (var i=0 ; i<names.length; i++) {
-           list=list + '<li>'+ names[i] + '</li>';
+           var names3 = request.responseText;
+           names3 = JSON.parse(names3);
+           var list3 ='';
+           for (var i=0 ; i<names3.length; i++) {
+           list3=list3 + '<li>'+ names3[i] + '</li>';
            }
-           var ul = document.getElementById("namelist");
-           ul.innerHTML = list; 
+           var ul3 = document.getElementById("ul3");
+           ul3.innerHTML = list3; 
         }
     }
         //don't do anything
     };
           //create request response page
-        var nameInput = document.getElementById("name");
-        var name = nameInput.value;
-        request.open('GET',' http://sachinstiglitz.imad.hasura-app.io/submit-name?name='+ name, true);
+        var nameInput3 = document.getElementById("three");
+        var name3 = nameInput3.value;
+        request.open('GET',' http://sachinstiglitz.imad.hasura-app.io/three?name='+ name3, true);
         request.send(null);  
 };
