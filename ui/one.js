@@ -23,7 +23,7 @@ submit.onclick = function() {
           //create request response page
         var nameInput1 = document.getElementById("one");
         var name1 = nameInput1.value;
-        request.open('GET',' http://sachinstiglitz.imad.hasura-app.io/one?name='+ name, true);
+        request.open('GET',' http://sachinstiglitz.imad.hasura-app.io/one?name='+ name1, true);
         request.send(null);  
 };
 
