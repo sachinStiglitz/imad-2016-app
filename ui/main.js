@@ -21,7 +21,7 @@ button.onclick= function() {
     };
           //create rewuest response page
 
-          request.open('GET',' http://coco98.imad.hasura-app.io/counter', true);
+          request.open('GET',' http://sachinstiglitz.imad.hasura-app.io/counter', true);
           request.send(null);
               
 };
