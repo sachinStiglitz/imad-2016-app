@@ -20,7 +20,9 @@ var articles ={
         </p>
         <p>
              This is my first article.This is my first article.This is my first article.This is my first article.This is my first article .This is my first article.This is my first article.
-        </p>`
+        </p>`,
+     text : 'one',
+     btn : 'one'
     },
     'article-two' : {
       title :'Article Two| Sachin R Das',
@@ -29,7 +31,9 @@ var articles ={
       content : 
         `<p>
               This is my second article
-         </p>`
+         </p>`,
+      text : 'two',
+      btn : 'two'
     },
     'article-three': {
       title :'Article Three | Sachin R Das',
@@ -38,7 +42,9 @@ var articles ={
       content : 
          `<p>
               This is my 3rd Article
-          </p>`
+          </p>`,
+      text : 'three',
+      btn : 'three'
     }
 }; 
 
@@ -47,6 +53,8 @@ var title=data.title;
 var heading = data.heading;
 var date=data.date;
 var content=data.content;
+var text=data.text;
+var btn=data.btn;
 
 var htmlTemplate =
 `<html>
@@ -72,6 +80,9 @@ var htmlTemplate =
        < div>
            ${content}
        </div>
+       <hr/>
+          <input type="text" id ="${text}" placeholder="name"></input>
+          <input type="submit" value = "Submit" id ="${btn}"></input>
     </div>
   </body>
 </html>
