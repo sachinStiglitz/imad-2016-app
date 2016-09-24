@@ -109,13 +109,12 @@ app.get('/ui/madi.png', function (req, res) {
 });
 
 var names = [];
-app.get("/submit-name/:name",function(req,res){
-    //get the name from the request
-    var name = req.params.name;  //TODO
-    
-    names.push(name);
-     //JSON = Javascript Object Notation
-     res.send(JSON.stringify(names));
+app.get("/submit-name",function(req,res){                //method 1 : app.get("/submit-name/:name",function(req,res){
+  //get the name from the request                        //              //URL : /submit-name/xxxxxxxx
+var name = req.query.name;  //TODO                      //             var name = req.params.name;
+    names.push(name);                                    //method 2 : app.get("/submit-name",function(req,res){
+     //JSON = Javascript Object Notation                 //              //URL : /submit-name?name=xxxxxx                
+     res.send(JSON.stringify(names));                    //             var name = req.query.name; 
 });
 
 
